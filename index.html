@@ -88,9 +88,9 @@
 				</div>
 
 				<div class="play  text-center  padding-tb">
-					<a href="#" class="action  gray  btn-prev"><i class="fa fa-backward"></i></a>
-					<a href="#" class="action  gray  btn-play"><i class="fa fa-play"></i></a>
-					<a href="#" class="action  gray  btn-next"><i class="fa fa-forward"></i></a>
+					<a href="#" class="action  gray  btn-prev" id="prev"><i class="fa fa-backward"></i></a>
+					<a href="#" class="action  gray  btn-play" id="play"><i class="fa fa-play"></i></a>
+					<a href="#" class="action  gray  btn-next" id="next"><i class="fa fa-forward"></i></a>
 					<a href="#" class="action  gray  btn-random"><i class="fa fa-random"></i></a>
 					<a href="#" class="action  gray  btn-volume"><i class="fa fa-volume-up"></i></a>
 				</div>
@@ -181,92 +181,27 @@
 	</section>
 
 
-	<section class="container">
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
-		<article class="song">
-			<figure class="image">
-				<img src="img/songs/el-perdon.jpg" width="128" height="128" alt="El perdon - Nicky Jam">
-			</figure>
-			<p class="name">El perdon</p>
-			<p class="author">Nicky Jam</p>
-		</article>
+	<section class="container" id="list">
+		<script type="html/x-handlebars" id="song-tmpl">
+			{{#each songs}}
+			<article class="song" data-id="{{@index}}">
+				<figure class="image">
+					<img src="{{img}}" width="128" height="128" title="{{artist}}">
+				</figure>
+				<p class="name">
+					{{name}}
+				</p>
+				<p class="author">
+					{{artist}}
+				</p>
+			</article>
+			{{/each}}
+		</script>
+		
 	</section>
-
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/lib/handlebars.js"></script>
+	<script src="js/lib/observable.js"></script>
+	<script src="js/player-mvc.js"></script>
 </body>
 </html>
